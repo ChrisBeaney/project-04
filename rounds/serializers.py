@@ -25,7 +25,7 @@ class CourseSerializer(serializers.ModelSerializer):
 
 class HoleSerializer(serializers.ModelSerializer):
 
-    course = NestedCourseSerializer
+    course = NestedCourseSerializer()
 
     class Meta:
         model = Hole
