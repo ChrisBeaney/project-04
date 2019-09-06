@@ -1,0 +1,351 @@
+[
+{
+  "model": "rounds.course",
+  "pk": 1,
+  "fields": {
+    "name": "St Georges Hill",
+    "par": 70
+  }
+},
+{
+  "model": "rounds.course",
+  "pk": 2,
+  "fields": {
+    "name": "Sunningdale (Old)",
+    "par": 70
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 1,
+  "fields": {
+    "number": 1,
+    "par": 4,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 2,
+  "fields": {
+    "number": 2,
+    "par": 4,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 3,
+  "fields": {
+    "number": 3,
+    "par": 3,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 4,
+  "fields": {
+    "number": 4,
+    "par": 4,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 5,
+  "fields": {
+    "number": 5,
+    "par": 4,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 6,
+  "fields": {
+    "number": 6,
+    "par": 4,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 7,
+  "fields": {
+    "number": 7,
+    "par": 5,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 8,
+  "fields": {
+    "number": 8,
+    "par": 3,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 9,
+  "fields": {
+    "number": 9,
+    "par": 4,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 10,
+  "fields": {
+    "number": 10,
+    "par": 4,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 11,
+  "fields": {
+    "number": 11,
+    "par": 3,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 12,
+  "fields": {
+    "number": 12,
+    "par": 4,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 13,
+  "fields": {
+    "number": 13,
+    "par": 4,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 14,
+  "fields": {
+    "number": 14,
+    "par": 3,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 15,
+  "fields": {
+    "number": 15,
+    "par": 5,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 16,
+  "fields": {
+    "number": 16,
+    "par": 4,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 17,
+  "fields": {
+    "number": 17,
+    "par": 4,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.hole",
+  "pk": 18,
+  "fields": {
+    "number": 18,
+    "par": 4,
+    "course": 1
+  }
+},
+{
+  "model": "rounds.player",
+  "pk": 1,
+  "fields": {
+    "name": "Chris",
+    "handicap": 7.4,
+    "playing_handicap": null
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 1,
+  "fields": {
+    "shots": 4,
+    "player": 1,
+    "hole": 1
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 2,
+  "fields": {
+    "shots": 4,
+    "player": 1,
+    "hole": 2
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 3,
+  "fields": {
+    "shots": 3,
+    "player": 1,
+    "hole": 3
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 4,
+  "fields": {
+    "shots": 4,
+    "player": 1,
+    "hole": 4
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 5,
+  "fields": {
+    "shots": 4,
+    "player": 1,
+    "hole": 5
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 6,
+  "fields": {
+    "shots": 4,
+    "player": 1,
+    "hole": 6
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 7,
+  "fields": {
+    "shots": 5,
+    "player": 1,
+    "hole": 7
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 8,
+  "fields": {
+    "shots": 3,
+    "player": 1,
+    "hole": 8
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 9,
+  "fields": {
+    "shots": 4,
+    "player": 1,
+    "hole": 9
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 10,
+  "fields": {
+    "shots": 4,
+    "player": 1,
+    "hole": 10
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 11,
+  "fields": {
+    "shots": 3,
+    "player": 1,
+    "hole": 11
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 12,
+  "fields": {
+    "shots": 4,
+    "player": 1,
+    "hole": 12
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 13,
+  "fields": {
+    "shots": 4,
+    "player": 1,
+    "hole": 13
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 14,
+  "fields": {
+    "shots": 3,
+    "player": 1,
+    "hole": 14
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 15,
+  "fields": {
+    "shots": 5,
+    "player": 1,
+    "hole": 15
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 16,
+  "fields": {
+    "shots": 4,
+    "player": 1,
+    "hole": 16
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 17,
+  "fields": {
+    "shots": 4,
+    "player": 1,
+    "hole": 17
+  }
+},
+{
+  "model": "rounds.score",
+  "pk": 18,
+  "fields": {
+    "shots": 4,
+    "player": 1,
+    "hole": 18
+  }
+}
+]
