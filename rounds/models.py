@@ -1,6 +1,11 @@
 from django.db import models
+
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.utils import timezone
+from django.conf import settings
+
+# from django_mysql.models import ListCharField
+# from django.contrib.postgres.fields import ArrayField # Not sure if this works with sqlite
 
 # Create your models here.
 class Course(models.Model):
@@ -53,13 +58,12 @@ class Score(models.Model):
 
 
 class Round(models.Model):
-    # course = models.ForeignKey(
-    #     Course,
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    # )
-    # player = models.ForeignKey(
-    #     Player,
-    #     on_delete=models.CASCADE
-    # )
+    course = models.ForeignKey(
+        Course,
+        on_delete=models.SET_NULL,
+        null=True,
+    )
     played_date = models.DateField(default=timezone.now)
+    player = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    # scores = ListCharField(base_field=models.IntegerField(), size=18)
+    # scores = ArrayField(base_field=models.IntegerField(), size=18)
