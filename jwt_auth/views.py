@@ -1,9 +1,9 @@
+import datetime
 from django.conf import settings
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import PermissionDenied
 import jwt
-import datetime
 from .serializers import UserSerializer
 from .models import User
 
@@ -28,14 +28,12 @@ class LoginView(APIView):
             raise PermissionDenied({'message': 'Invalid credentials'})
 
     def post(self, request):
-
         email = request.data.get('email')
         password = request.data.get('password')
-
         user = self.get_user(email)
+
         if not user.check_password(password):
             raise PermissionDenied({'message': 'Invalid credentials'})
-
 
         payload = {
             'sub': user.id,
