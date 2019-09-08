@@ -4,12 +4,11 @@ from django.conf import settings
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.exceptions import PermissionDenied
 
-
 import jwt
 
 class JWTAuthentication(BasicAuthentication):
 
-    def authenicate(self, request):
+    def authenticate(self, request):
 
         header = request.headers.get('Authorization')
 
@@ -30,7 +29,7 @@ class JWTAuthentication(BasicAuthentication):
         except User.DoesNotExist:
             raise PermissionDenied({'message': 'Invalid subject'})
 
-        # 'authenticate' should return a tuple is auth is successful
+        # 'authenticate' should return a tuple if auth is successful
         # The first element is the user, the second is the token (if used).
         # request.user will be the user.
         # request.token will be the token.

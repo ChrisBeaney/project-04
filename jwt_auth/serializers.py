@@ -28,4 +28,5 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
+        # Add extra fields here.
         fields = ('username', 'email', 'password', 'password_confirmation', 'handicap')
