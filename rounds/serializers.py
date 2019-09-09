@@ -43,7 +43,7 @@ class HoleSerializer(serializers.ModelSerializer):
 class RoundSerializer(serializers.ModelSerializer):
 
     course = NestedCourseSerializer()
-    player = UserSerializer(read_only=True)
+    player = UserSerializer()
 
     class Meta:
         model = Round
@@ -52,7 +52,7 @@ class RoundSerializer(serializers.ModelSerializer):
 
 class ScoreSerializer(serializers.ModelSerializer):
 
-    player = UserSerializer(read_only=True)
+    player = UserSerializer()
     hole = NestedHoleSerializer()
     round = NestedRoundSerializer()
 

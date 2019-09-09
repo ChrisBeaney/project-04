@@ -2,6 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 // import axios from 'axios'
 
+import {HashRouter, Route, Switch } from 'react-router-dom'
+
+import Home from './components/pages/Home'
+import Register from './components/auth/Register'
+import Login from './components/auth/Login'
+import Navbar from './components/common/Navbar'
+
 class App extends React.Component {
   // componentDidMount() {
   //   axios.get('/api/rounds/')
@@ -10,10 +17,14 @@ class App extends React.Component {
 
   render() {
     return(
-      <div>
-        <h1>Hello Django!</h1>
-        <h2>Project-04</h2>
-      </div>
+      <HashRouter>
+        <Navbar/>      
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path= "/" component={Home}/>
+        </Switch>
+      </HashRouter>
     )
   }
 }
