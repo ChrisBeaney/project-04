@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Hole, Course
+from jwt_auth.serializers import UserSerializer
+from .models import Course, Hole, Round, Score
 
 
 class NestedCourseSerializer(serializers.ModelSerializer):
@@ -16,10 +17,17 @@ class NestedHoleSerializer(serializers.ModelSerializer):
         fields = ('id', 'number', 'par', 'course')
 
 
+class NestedRoundSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Round
+        fields = ('id', 'played_date', 'course', 'player', 'scores')
+
+
 class CourseSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model: Course
+        model = Course
         fields = ('id', 'name', 'par')
 
 
@@ -30,3 +38,24 @@ class HoleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Hole
         fields = ('id', 'number', 'par', 'course')
+
+
+class RoundSerializer(serializers.ModelSerializer):
+
+    course = NestedCourseSerializer()
+    player = UserSerializer(read_only=True)
+
+    class Meta:
+        model = Round
+        fields = ('id', 'played_date', 'course', 'player', 'scores')
+
+
+class ScoreSerializer(serializers.ModelSerializer):
+
+    player = UserSerializer(read_only=True)
+    hole = NestedHoleSerializer()
+    round = NestedRoundSerializer()
+
+    class Meta:
+        model = Score
+        fields = ('id', 'shots', 'player', 'hole', 'round')
