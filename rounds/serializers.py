@@ -14,7 +14,7 @@ class NestedHoleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Hole
-        fields = ('id', 'number', 'par', 'course')
+        fields = ('id', 'number', 'par', 'stroke_index', 'course')
 
 
 class CourseSerializer(serializers.ModelSerializer):
@@ -30,7 +30,7 @@ class HoleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Hole
-        fields = ('id', 'number', 'par', 'course')
+        fields = ('id', 'number', 'par', 'stroke_index', 'course')
 
 
 class ScoreSerializer(serializers.ModelSerializer):

@@ -24,6 +24,7 @@ class Course(models.Model):
 class Hole(models.Model):
     number = models.IntegerField()
     par = models.IntegerField(default=4, validators=[MaxValueValidator(5), MinValueValidator(3)])
+    stroke_index = models.IntegerField(default=9, validators=[MaxValueValidator(18), MinValueValidator(1)])
     yards = models.IntegerField(default=350)
     course = models.ForeignKey(
         Course,
