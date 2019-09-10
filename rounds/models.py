@@ -30,6 +30,7 @@ class Hole(models.Model):
         Course,
         on_delete=models.SET_NULL,
         null=True,
+        related_name='holes'
     )
 
     def __str__(self):
@@ -39,12 +40,11 @@ class Hole(models.Model):
 class Score(models.Model):
     date = models.DateField(default=timezone.now)
     shots = models.IntegerField(default=4)
-    player = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    player = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='scores')
     hole = models.ForeignKey(
         Hole,
         on_delete=models.CASCADE
     )
-
 
     def __str__(self):
         return f'{self.hole} - Score: {self.shots}'

@@ -1,9 +1,9 @@
 from rest_framework.views import APIView # get the APIView class from DRF
 from rest_framework.response import Response # get the Response class from DRF
 # from .permissions import IsOwnerOrReadOnly
-from jwt_auth.serializers import UserSerializer
+# from jwt_auth.serializers import UserSerializer
 from .models import Course, Hole, Score
-from .serializers import NestedCourseSerializer, NestedHoleSerializer, CourseSerializer, HoleSerializer, ScoreSerializer
+from .serializers import NestedCourseSerializer, NestedHoleSerializer, CourseSerializer, HoleSerializer, ScoreSerializer, PopulatedCourseSerializer, PopulatedUserSerializer
 
 
 # Create your views here.
@@ -24,27 +24,34 @@ class CourseListView(APIView):
 class CourseDetailView(APIView):
     def get(self, _request, pk):
         course = Course.objects.get(pk=pk)
-        serializer = CourseSerializer(course)
+        serializer = PopulatedCourseSerializer(course)
         return Response(serializer.data)
 
 
 class ScoreListView(APIView):
-    def get(self, _request):
-        scores = Score.objects.all()
-        serializer = ScoreSerializer(scores, many=True)
-        return Response(serializer.data)
+    # def get(self, _request):
+    #     scores = Score.objects.all()
+    #     serializer = ScoreSerializer(scores, many=True)
+    #     return Response(serializer.data)
 
     def post(self, request):
         serializer = ScoreSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.save(player=request.user)
             return Response(serializer.data, status="201")
         return Response(serializer.errors, status="422")
 
 
+class ScoreDetailView(APIView):
+    def get(self, _request, pk):
+        score = Score.objects.get(pk=pk)
+        serializer = ScoreSerializer(score)
+        return Response(serializer.data)
+
+
 class ProfileView(APIView):
     def get(self, request):
-        serializer = UserSerializer(request.user)
+        serializer = PopulatedUserSerializer(request.user)
         return Response(serializer.data)
 
 

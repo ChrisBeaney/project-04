@@ -7,8 +7,6 @@ const CourseCard = ({ name, par }) => {
       <h2>{name}</h2>
       <h4>{par}</h4>
     </div>
-
-
   )
 }
 
