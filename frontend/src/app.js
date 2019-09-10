@@ -8,6 +8,7 @@ import Home from './components/pages/Home'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import Navbar from './components/common/Navbar'
+// import New from './components/rounds/New' # <Route path="/rounds/new" component={New}/>
 
 class App extends React.Component {
   // componentDidMount() {
@@ -18,11 +19,11 @@ class App extends React.Component {
   render() {
     return(
       <HashRouter>
-        <Navbar/>      
+        <Navbar/>
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path= "/" component={Home}/>
+          <Route path="/" component={Home}/>
         </Switch>
       </HashRouter>
     )

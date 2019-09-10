@@ -47,9 +47,6 @@ class Navbar extends React.Component {
           <nav className="navbar">
             <div className="container">
               <div className="navbar-brand">
-                <Link to ="/" className="image is-128x128">
-                  <img src="https://i.imgur.com/Hy4OAXr.png" alt="Logo"/>
-                </Link>
                 <a
                   role="button"
                   className={`navbar-burger ${this.state.navbarOpen ? 'is-active' : ''}`}
@@ -92,7 +89,7 @@ class Navbar extends React.Component {
             <div className="container">
               <ul>
                 <li className={activeClass('/')}><Link to ="/">Home</Link></li>
-                <li className={activeClass('/new')}>{Auth.isAuthenticated() &&<Link to ="/new">Add round</Link>}</li>
+                <li className={activeClass('/new')}>{Auth.isAuthenticated() &&<Link to ="/new">Add Round</Link>}</li>
                 <li className={activeClass('/stats')}><Link to ="/stats">Stats</Link></li>
               </ul>
             </div>
