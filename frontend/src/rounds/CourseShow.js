@@ -20,9 +20,21 @@ class CourseShow extends React.Component {
   }
 
 
-  render() {
-
-  }
+  // render() {
+  //   return(
+  //     <div className="columns is-multiline">
+  //       {!this.state.course && <h2 className="title is-2">Loading course...</h2>}
+  //       {this.state.course.map(course =>
+  //         <div key={course.id} className="column is-half-tablet is-one-quarter-desktop">
+  //           <Link to={`/courses/${course.id}`}>
+  //             <CourseCard {...course} />
+  //           </Link>
+  //         </div>
+  //       )}
+  //
+  //     </div>
+  //   )
+  // }
 
 }
 

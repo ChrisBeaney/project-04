@@ -12,6 +12,8 @@ class NestedCourseSerializer(serializers.ModelSerializer):
 
 class NestedHoleSerializer(serializers.ModelSerializer):
 
+    course = NestedCourseSerializer()
+
     class Meta:
         model = Hole
         fields = ('id', 'number', 'par', 'stroke_index', 'course', 'yards',)
