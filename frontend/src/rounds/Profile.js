@@ -8,6 +8,10 @@ class Profile extends React.Component {
     super()
 
     this.state = {}
+
+    this.totalShots = this.totalShots.bind(this)
+    this.totalYards = this.totalYards.bind(this)
+    this.selectRounds = this.selectRounds.bind(this)
   }
 
   componentDidMount() {
@@ -17,21 +21,36 @@ class Profile extends React.Component {
       })
   }
 
+  totalShots() {
+    const shotsArray = []
+    this.state.profile.scores.forEach(score => {
+      shotsArray.push(score.shots)
+    })
+    return shotsArray.reduce((acc, score) => acc + score, 0)
+  }
+
+  totalYards() {
+    const yardsArray = []
+    this.state.profile.scores.forEach(score => {
+      yardsArray.push(score.hole.yards)
+    })
+    return yardsArray.reduce((acc, length) => acc + length, 0)
+  }
+
+  selectRounds() {
+    const numRounds = this.state.profile.scores.length / 18
+    return numRounds
+  }
+
   render() {
     if(!this.state.profile) return null
-    console.log(this.state.profile.scores)
-
-    const scores = this.state.profile.scores
-    const rounds = []
-
-    scores.forEach(score => {
-      score.date
-    })
-
+    const { scores } = this.state.profile
+    const firstRound = Object.keys(scores)[0]
     return(
       <section>
         <h1>Profile Page</h1>
         <h2>Player:&nbsp;{this.state.profile.username}</h2>
+        <h2>Course:&nbsp;{scores[firstRound][0].hole.course.name}</h2>
         <table className="table is-bordered">
           <thead>
             <tr>
@@ -39,17 +58,20 @@ class Profile extends React.Component {
               <th>Yards</th>
               <th>SI</th>
               <th>Par</th>
-              <th>Score</th>
+              {Object.keys(scores).map(date => <th key={date}>{date}</th>)}
             </tr>
           </thead>
           <tbody>
-            {this.state.profile.scores.map(score => <tr key={score.id}>
-              <td>{score.hole.number}</td>
-              <td>{score.hole.yards}</td>
-              <td>{score.hole.stroke_index}</td>
-              <td>{score.hole.par}</td>
-              <td>{score.shots}</td>
-            </tr>
+            {scores[firstRound].map((score, index) =>
+              <tr key={score.id}>
+                <td>{score.hole.number}</td>
+                <td>{score.hole.yards}</td>
+                <td>{score.hole.stroke_index}</td>
+                <td>{score.hole.par}</td>
+                {Object.keys(scores).map(date =>
+                  <td key={date}>{scores[date][index].shots}</td>
+                )}
+              </tr>
             )}
           </tbody>
         </table>

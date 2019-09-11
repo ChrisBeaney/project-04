@@ -52,7 +52,16 @@ class ScoreDetailView(APIView):
 class ProfileView(APIView):
     def get(self, request):
         serializer = PopulatedUserSerializer(request.user)
-        return Response(serializer.data)
+        data = serializer.data
+        scores = {}
+        for score in data['scores']:
+            if not score['date'] in scores:
+                scores[score['date']] = []
+
+            scores[score['date']].append(score)
+
+
+        return Response({**data, 'scores': scores})
 
 
 

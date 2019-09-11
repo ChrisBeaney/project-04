@@ -43,47 +43,7 @@ class Navbar extends React.Component {
 
     return (
       <section className="hero is-primary is-bold is-small">
-        <div className="hero-head">
-          <nav className="navbar">
-            <div className="container">
-              <div className="navbar-brand">
-                <a
-                  role="button"
-                  className={`navbar-burger ${this.state.navbarOpen ? 'is-active' : ''}`}
-                  onClick={this.toggleNavbar}
-                >
-                  <span aria-hidden="true"></span>
-                  <span aria-hidden="true"></span>
-                  <span aria-hidden="true"></span>
-                </a>
-              </div>
-              <div className="container hero-body">
-                <h1 className="title">
-                 ScoreTracker
-                </h1>
-                <h2 className="subtitle">
-                 Analyse your rounds
-                </h2>
-                <br/>
-              </div>
 
-              <div className={`navbar-menu ${this.state.navbarOpen ? 'is-active' : ''}`}>
-                <div className="navbar-end">
-                  {Auth.isAuthenticated() && <a onClick={this.logout} className="navbar-item ">Logout</a>}
-
-                  {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">
-                    <button className="button is-info registerbutton">Register</button>
-                  </Link>}
-
-                  <span className="navbar-item login-button">
-                    <Login/>
-                  </span>
-
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
         <div className="hero-foot">
           <nav className="tabs is-boxed ">
             <div className="container">
@@ -104,3 +64,46 @@ class Navbar extends React.Component {
 }
 
 export default withRouter(Navbar)
+
+
+// <div className="hero-head">
+//   <nav className="navbar">
+//     <div className="container">
+//       <div className="navbar-brand">
+//         <a
+//           role="button"
+//           className={`navbar-burger ${this.state.navbarOpen ? 'is-active' : ''}`}
+//           onClick={this.toggleNavbar}
+//         >
+//           <span aria-hidden="true"></span>
+//           <span aria-hidden="true"></span>
+//           <span aria-hidden="true"></span>
+//         </a>
+//       </div>
+//       <div className="container hero-body">
+//         <h1 className="title">
+//          ScoreTracker
+//         </h1>
+//         <h2 className="subtitle">
+//          Analyse your rounds
+//         </h2>
+//         <br/>
+//       </div>
+//
+//       <div className={`navbar-menu ${this.state.navbarOpen ? 'is-active' : ''}`}>
+//         <div className="navbar-end">
+//           {Auth.isAuthenticated() && <a onClick={this.logout} className="navbar-item ">Logout</a>}
+//
+//           {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">
+//             <button className="button is-info registerbutton">Register</button>
+//           </Link>}
+//
+//           <span className="navbar-item login-button">
+//             <Login/>
+//           </span>
+//
+//         </div>
+//       </div>
+//     </div>
+//   </nav>
+// </div>
