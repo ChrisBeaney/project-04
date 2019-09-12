@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Auth from '../lib/Auth'
 
 
 class Profile extends React.Component {
@@ -14,7 +15,9 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/profile')
+    axios.get('/api/profile', {
+      headers: { Authorization: `Bearer ${Auth.getToken()}`}
+    })
       .then(res => {
         this.setState({ profile: res.data })
       })
