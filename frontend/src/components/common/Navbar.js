@@ -52,6 +52,7 @@ class Navbar extends React.Component {
                 <li className={activeClass('/new')}>{Auth.isAuthenticated() &&<Link to ="/new">Add Round</Link>}</li>
                 <li className={activeClass('/courses')}><Link to ="/courses">Courses</Link></li>
                 <li className={activeClass('/stats')}><Link to ="/stats">Stats</Link></li>
+                <li className={activeClass('/profile')}><Link to ="/profile">Profile</Link></li>
               </ul>
             </div>
           </nav>

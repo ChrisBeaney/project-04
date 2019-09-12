@@ -11,7 +11,6 @@ class Profile extends React.Component {
 
     this.totalShots = this.totalShots.bind(this)
     this.totalYards = this.totalYards.bind(this)
-    this.selectRounds = this.selectRounds.bind(this)
   }
 
   componentDidMount() {
@@ -35,11 +34,6 @@ class Profile extends React.Component {
       yardsArray.push(score.hole.yards)
     })
     return yardsArray.reduce((acc, length) => acc + length, 0)
-  }
-
-  selectRounds() {
-    const numRounds = this.state.profile.scores.length / 18
-    return numRounds
   }
 
   render() {
